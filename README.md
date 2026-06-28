@@ -7,4 +7,3 @@ git push
 git pull
 Проверить изменения
 git status
-
