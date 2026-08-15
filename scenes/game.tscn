@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c42nkm0pxauc" path="res://scenes/coin_2d.tscn" id="4_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://ch0a7swnrouyn" path="res://scenes/false_platform.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://c6dx2queolcp5" path="res://scenes/platform.tscn" id="6_p57ef"]
+[ext_resource type="PackedScene" uid="uid://bof3i8ea2wu8p" path="res://scenes/kill_zone.tscn" id="7_u5sy4"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = 3.0
@@ -76,13 +77,15 @@ position = Vector2(34, -32)
 rotation = 3.1415927
 scale = Vector2(1, -1)
 zoom = Vector2(4, 4)
+limit_bottom = 51
+limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 30.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=627750269]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1573210921]
-position = Vector2(359, 358)
+position = Vector2(132, 154)
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2105975698]
@@ -92,127 +95,179 @@ position = Vector2(136, 75)
 position = Vector2(-563, -176)
 shape = SubResource("WorldBoundaryShape2D_lnu2h")
 
-[node name="Node2D" parent="StaticBody2D2" unique_id=2015141679 instance=ExtResource("4_u5sy4")]
-position = Vector2(-158, -162)
+[node name="kill_zone" parent="." unique_id=1455925117 instance=ExtResource("7_u5sy4")]
+position = Vector2(134, 101)
 
-[node name="Node2D2" parent="StaticBody2D2" unique_id=1733316600 instance=ExtResource("4_u5sy4")]
-position = Vector2(-129, -162)
+[node name="Node" type="Node" parent="." unique_id=370784922]
 
-[node name="Node2D3" parent="StaticBody2D2" unique_id=697907348 instance=ExtResource("4_u5sy4")]
-position = Vector2(-344, -185)
-
-[node name="Node2D4" parent="StaticBody2D2" unique_id=1031049745 instance=ExtResource("4_u5sy4")]
-position = Vector2(-147, -105)
-
-[node name="AnimatableBody2D" parent="." unique_id=1870776959 instance=ExtResource("4_lbhrr")]
+[node name="AnimatableBody2D" parent="Node" unique_id=1870776959 instance=ExtResource("4_lbhrr")]
 position = Vector2(483, -145)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D" unique_id=1329670946]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/AnimatableBody2D" unique_id=1329670946]
 libraries/ = SubResource("AnimationLibrary_u5sy4")
 
-[node name="AnimatableBody2D2" parent="." unique_id=259570937 instance=ExtResource("5_iywne")]
-position = Vector2(0, -72)
+[node name="AnimatableBody2D2" parent="Node" unique_id=259570937 instance=ExtResource("5_iywne")]
+position = Vector2(0, -63)
 
-[node name="AnimatableBody2D3" parent="." unique_id=1320866210 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D3" parent="Node" unique_id=1320866210 instance=ExtResource("6_p57ef")]
 position = Vector2(-186, -94)
 
-[node name="AnimatableBody2D4" parent="." unique_id=973381494 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D4" parent="Node" unique_id=973381494 instance=ExtResource("6_p57ef")]
 position = Vector2(-154, -59)
 
-[node name="AnimatableBody2D5" parent="." unique_id=452182954 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D5" parent="Node" unique_id=452182954 instance=ExtResource("6_p57ef")]
 position = Vector2(-122, -59)
 
-[node name="AnimatableBody2D6" parent="." unique_id=2045726110 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D6" parent="Node" unique_id=2045726110 instance=ExtResource("6_p57ef")]
 position = Vector2(-89, -59)
 
-[node name="AnimatableBody2D8" parent="." unique_id=1564182779 instance=ExtResource("6_p57ef")]
-position = Vector2(32, -72)
+[node name="AnimatableBody2D8" parent="Node" unique_id=1564182779 instance=ExtResource("6_p57ef")]
+position = Vector2(32, -63)
 
-[node name="AnimatableBody2D7" parent="." unique_id=2026287402 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D7" parent="Node" unique_id=2026287402 instance=ExtResource("6_p57ef")]
 position = Vector2(-52, 14)
 
-[node name="AnimatableBody2D9" parent="." unique_id=1302175490 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D9" parent="Node" unique_id=1302175490 instance=ExtResource("6_p57ef")]
 position = Vector2(-20, 14)
 
-[node name="AnimatableBody2D10" parent="." unique_id=132278643 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D10" parent="Node" unique_id=132278643 instance=ExtResource("6_p57ef")]
 position = Vector2(13, -12)
 
-[node name="AnimatableBody2D11" parent="." unique_id=1975573120 instance=ExtResource("4_lbhrr")]
+[node name="AnimatableBody2D11" parent="Node" unique_id=1975573120 instance=ExtResource("4_lbhrr")]
 position = Vector2(-301, -132)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D11" unique_id=234519108]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node/AnimatableBody2D11" unique_id=234519108]
 libraries/ = SubResource("AnimationLibrary_0tnpc")
 autoplay = &"fly_animation"
 
-[node name="Node2D" parent="." unique_id=1706112680 instance=ExtResource("4_u5sy4")]
-position = Vector2(-326, -153)
-
-[node name="Node2D2" parent="." unique_id=949694947 instance=ExtResource("4_u5sy4")]
-position = Vector2(-290, -153)
-
-[node name="Node2D3" parent="." unique_id=2007120928 instance=ExtResource("4_u5sy4")]
-position = Vector2(53, -29)
-
-[node name="AnimatableBody2D12" parent="." unique_id=433782845 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D12" parent="Node" unique_id=433782845 instance=ExtResource("6_p57ef")]
 position = Vector2(75, -11)
 
-[node name="AnimatableBody2D13" parent="." unique_id=1800244243 instance=ExtResource("6_p57ef")]
-position = Vector2(-47, -76)
+[node name="AnimatableBody2D13" parent="Node" unique_id=1800244243 instance=ExtResource("6_p57ef")]
+position = Vector2(-42, -67)
 rotation = 1.5707964
 
-[node name="AnimatableBody2D14" parent="." unique_id=1148066499 instance=ExtResource("6_p57ef")]
-position = Vector2(-47, -110)
+[node name="AnimatableBody2D14" parent="Node" unique_id=1148066499 instance=ExtResource("6_p57ef")]
+position = Vector2(-42, -98)
 rotation = 1.5707964
 
-[node name="AnimatableBody2D15" parent="." unique_id=1040944516 instance=ExtResource("6_p57ef")]
-position = Vector2(32, -118)
+[node name="AnimatableBody2D15" parent="Node" unique_id=1040944516 instance=ExtResource("6_p57ef")]
+position = Vector2(32, -110)
 rotation = -1.5707964
 
-[node name="AnimatableBody2D16" parent="." unique_id=819636087 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D16" parent="Node" unique_id=819636087 instance=ExtResource("6_p57ef")]
 position = Vector2(136, 0)
 
-[node name="AnimatableBody2D17" parent="." unique_id=896658253 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D17" parent="Node" unique_id=896658253 instance=ExtResource("6_p57ef")]
 position = Vector2(168, 0)
 
-[node name="AnimatableBody2D18" parent="." unique_id=157748016 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D18" parent="Node" unique_id=157748016 instance=ExtResource("6_p57ef")]
 position = Vector2(200, 0)
 
-[node name="AnimatableBody2D19" parent="." unique_id=1650715354 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D19" parent="Node" unique_id=1650715354 instance=ExtResource("6_p57ef")]
 position = Vector2(232, 0)
 
-[node name="AnimatableBody2D20" parent="." unique_id=63317149 instance=ExtResource("5_iywne")]
+[node name="AnimatableBody2D20" parent="Node" unique_id=63317149 instance=ExtResource("5_iywne")]
 position = Vector2(200, -76)
 
-[node name="AnimatableBody2D21" parent="." unique_id=1779025320 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D21" parent="Node" unique_id=1779025320 instance=ExtResource("6_p57ef")]
 position = Vector2(262, -21)
 
-[node name="AnimatableBody2D22" parent="." unique_id=513387316 instance=ExtResource("5_iywne")]
+[node name="AnimatableBody2D22" parent="Node" unique_id=513387316 instance=ExtResource("5_iywne")]
 position = Vector2(168, -76)
 
-[node name="AnimatableBody2D23" parent="." unique_id=1851046351 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D23" parent="Node" unique_id=1851046351 instance=ExtResource("6_p57ef")]
 position = Vector2(324, -38)
 
-[node name="AnimatableBody2D24" parent="." unique_id=696957706 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D24" parent="Node" unique_id=696957706 instance=ExtResource("6_p57ef")]
 position = Vector2(356, -38)
 
-[node name="AnimatableBody2D25" parent="." unique_id=849362000 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D25" parent="Node" unique_id=849362000 instance=ExtResource("6_p57ef")]
 position = Vector2(388, -38)
 
-[node name="AnimatableBody2D26" parent="." unique_id=296989562 instance=ExtResource("5_iywne")]
+[node name="AnimatableBody2D26" parent="Node" unique_id=296989562 instance=ExtResource("5_iywne")]
 position = Vector2(451, -59)
 
-[node name="AnimatableBody2D27" parent="." unique_id=1722116775 instance=ExtResource("5_iywne")]
+[node name="AnimatableBody2D27" parent="Node" unique_id=1722116775 instance=ExtResource("5_iywne")]
 position = Vector2(451, -102)
 
-[node name="AnimatableBody2D28" parent="." unique_id=1923070099 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D28" parent="Node" unique_id=1923070099 instance=ExtResource("6_p57ef")]
 position = Vector2(420, -38)
 
-[node name="AnimatableBody2D29" parent="." unique_id=2032405317 instance=ExtResource("5_iywne")]
+[node name="AnimatableBody2D29" parent="Node" unique_id=2032405317 instance=ExtResource("5_iywne")]
 position = Vector2(451, -145)
 
-[node name="AnimatableBody2D30" parent="." unique_id=622400022 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D30" parent="Node" unique_id=622400022 instance=ExtResource("6_p57ef")]
 position = Vector2(515, -145)
 
-[node name="AnimatableBody2D31" parent="." unique_id=50810521 instance=ExtResource("6_p57ef")]
+[node name="AnimatableBody2D31" parent="Node" unique_id=50810521 instance=ExtResource("6_p57ef")]
 position = Vector2(515, -191)
 rotation = -1.5707964
+
+[node name="Node2" type="Node" parent="." unique_id=1395632057]
+
+[node name="Node2D" parent="Node2" unique_id=1706112680 instance=ExtResource("4_u5sy4")]
+position = Vector2(-326, -153)
+
+[node name="Node2D2" parent="Node2" unique_id=949694947 instance=ExtResource("4_u5sy4")]
+position = Vector2(-290, -153)
+
+[node name="Node2D3" parent="Node2" unique_id=2007120928 instance=ExtResource("4_u5sy4")]
+position = Vector2(53, -29)
+
+[node name="Node2D4" parent="Node2" unique_id=547932018 instance=ExtResource("4_u5sy4")]
+position = Vector2(114, -21)
+
+[node name="Node2D5" parent="Node2" unique_id=1791402708 instance=ExtResource("4_u5sy4")]
+position = Vector2(-22, -87)
+
+[node name="Node2D6" parent="Node2" unique_id=2015141679 instance=ExtResource("4_u5sy4")]
+position = Vector2(146, -21)
+
+[node name="Node2D7" parent="Node2" unique_id=1380488710 instance=ExtResource("4_u5sy4")]
+position = Vector2(178, -22)
+
+[node name="Node2D8" parent="Node2" unique_id=1179594014 instance=ExtResource("4_u5sy4")]
+position = Vector2(210, -22)
+
+[node name="Node2D9" parent="Node2" unique_id=76490017 instance=ExtResource("4_u5sy4")]
+position = Vector2(146, -98)
+
+[node name="Node2D10" parent="Node2" unique_id=1224160277 instance=ExtResource("4_u5sy4")]
+position = Vector2(178, -98)
+
+[node name="Node2D11" parent="Node2" unique_id=1760393195 instance=ExtResource("4_u5sy4")]
+position = Vector2(302, -59)
+
+[node name="Node2D12" parent="Node2" unique_id=321924039 instance=ExtResource("4_u5sy4")]
+position = Vector2(334, -59)
+
+[node name="Node2D13" parent="Node2" unique_id=691679146 instance=ExtResource("4_u5sy4")]
+position = Vector2(366, -59)
+
+[node name="Node2D14" parent="Node2" unique_id=1007654609 instance=ExtResource("4_u5sy4")]
+position = Vector2(398, -59)
+
+[node name="Node2D15" parent="Node2" unique_id=762951176 instance=ExtResource("4_u5sy4")]
+position = Vector2(493, -164)
+
+[node name="Node2D16" parent="Node2" unique_id=1828842227 instance=ExtResource("4_u5sy4")]
+position = Vector2(462, -164)
+
+[node name="Node2D17" parent="Node2" unique_id=1603219881 instance=ExtResource("4_u5sy4")]
+position = Vector2(429, -164)
+
+[node name="Node2D18" parent="Node2" unique_id=1253999226 instance=ExtResource("4_u5sy4")]
+position = Vector2(429, -124)
+
+[node name="Node2D19" parent="Node2" unique_id=150726219 instance=ExtResource("4_u5sy4")]
+position = Vector2(429, -80)
+
+[node name="Node2D20" parent="Node2" unique_id=1733316600 instance=ExtResource("4_u5sy4")]
+position = Vector2(7, -87)
+
+[node name="Node2D21" parent="Node2" unique_id=697907348 instance=ExtResource("4_u5sy4")]
+position = Vector2(-208, -110)
+
+[node name="Node2D22" parent="Node2" unique_id=1031049745 instance=ExtResource("4_u5sy4")]
+position = Vector2(-11, -30)

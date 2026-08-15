@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bof3i8ea2wu8p"]
+
+[ext_resource type="Script" uid="uid://jju8ljicpi7l" path="res://scripts/dead_2d.gd" id="1_kebdr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kebdr"]
+
+[node name="kill_zone" type="Node2D" unique_id=1455925117]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1202930756]
+collision_mask = 2
+script = ExtResource("1_kebdr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1394093770]
+shape = SubResource("WorldBoundaryShape2D_kebdr")
+
+[node name="Timer" type="Timer" parent="Area2D" unique_id=719863244]
+wait_time = 0.5
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]
