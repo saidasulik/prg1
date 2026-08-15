@@ -101,14 +101,15 @@ radius = 7.0
 [node name="Node2D" type="Node2D" unique_id=2015141679]
 
 [node name="coin" type="Area2D" parent="." unique_id=1220413369]
+collision_mask = 2
+script = ExtResource("2_6t8f6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="coin" unique_id=1297294988]
 sprite_frames = SubResource("SpriteFrames_ibo2u")
 autoplay = "default"
-frame_progress = 0.22394913
+frame_progress = 0.43914422
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="coin" unique_id=850093955]
 shape = SubResource("CircleShape2D_y4gny")
-script = ExtResource("2_6t8f6")
 
-[connection signal="body_entered" from="coin" to="coin/CollisionShape2D" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="coin" to="coin" method="_on_coin_body_entered"]
