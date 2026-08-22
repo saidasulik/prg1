@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ch0a7swnrouyn" path="res://scenes/false_platform.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://c6dx2queolcp5" path="res://scenes/platform.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://bof3i8ea2wu8p" path="res://scenes/kill_zone.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://dikb0gb8kfxfl" path="res://scenes/dcheskei_tip_1.tscn" id="8_gee14"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = 3.0
@@ -113,7 +114,7 @@ position = Vector2(0, -63)
 position = Vector2(-186, -94)
 
 [node name="AnimatableBody2D4" parent="Node" unique_id=973381494 instance=ExtResource("6_p57ef")]
-position = Vector2(-154, -59)
+position = Vector2(-156, -59)
 
 [node name="AnimatableBody2D5" parent="Node" unique_id=452182954 instance=ExtResource("6_p57ef")]
 position = Vector2(-122, -59)
@@ -239,9 +240,6 @@ position = Vector2(178, -98)
 [node name="Node2D11" parent="Node2" unique_id=1760393195 instance=ExtResource("4_u5sy4")]
 position = Vector2(302, -59)
 
-[node name="Node2D12" parent="Node2" unique_id=321924039 instance=ExtResource("4_u5sy4")]
-position = Vector2(334, -59)
-
 [node name="Node2D13" parent="Node2" unique_id=691679146 instance=ExtResource("4_u5sy4")]
 position = Vector2(366, -59)
 
@@ -271,3 +269,6 @@ position = Vector2(-208, -110)
 
 [node name="Node2D22" parent="Node2" unique_id=1031049745 instance=ExtResource("4_u5sy4")]
 position = Vector2(-11, -30)
+
+[node name="dcheskei_tip1" parent="." unique_id=1284503148 instance=ExtResource("8_gee14")]
+position = Vector2(334.00003, -71)

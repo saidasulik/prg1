@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ca0cwjyrnaq3b"]
+
+[ext_resource type="Script" uid="uid://jju8ljicpi7l" path="res://scripts/dead_2d.gd" id="1_ea7bg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ea7bg"]
+size = Vector2(14, 12)
+
+[node name="kill_mob" type="Node2D" unique_id=1455925117]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1202930756]
+collision_mask = 2
+script = ExtResource("1_ea7bg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1394093770]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ea7bg")
+
+[node name="Timer" type="Timer" parent="Area2D" unique_id=719863244]
+wait_time = 0.5
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]
