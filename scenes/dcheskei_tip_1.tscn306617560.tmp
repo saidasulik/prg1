@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dikb0gb8kfxfl"]
+
+[ext_resource type="Script" uid="uid://dom10ulrbnjlj" path="res://scripts/dcheskei_tip_1.gd" id="1_ox8bd"]
+[ext_resource type="Texture2D" uid="uid://c0k1nnye7uq2v" path="res://assets/sprites/slime_purple.png" id="1_x5dke"]
+[ext_resource type="PackedScene" uid="uid://ca0cwjyrnaq3b" path="res://scenes/kill_mob.tscn" id="2_ox8bd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1f23"]
+atlas = ExtResource("1_x5dke")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3vno"]
+atlas = ExtResource("1_x5dke")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6uer"]
+atlas = ExtResource("1_x5dke")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhe52"]
+atlas = ExtResource("1_x5dke")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g84ee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1f23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3vno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6uer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhe52")
+}],
+"loop": true,
+"name": &"default",
+"speed": 100.0
+}]
+
+[node name="dcheskei_tip1" type="Node2D" unique_id=1284503148]
+scale = Vector2(1.9526954, 2.0367174)
+script = ExtResource("1_ox8bd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1591008080]
+sprite_frames = SubResource("SpriteFrames_g84ee")
+autoplay = "default"
+frame_progress = 0.9264224
+
+[node name="kill_mobe" parent="." unique_id=1455925117 instance=ExtResource("2_ox8bd")]
+position = Vector2(0, 5)

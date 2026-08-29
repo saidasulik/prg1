@@ -16,7 +16,7 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_ea7bg")
 
 [node name="Timer" type="Timer" parent="Area2D" unique_id=719863244]
-wait_time = 0.5
+wait_time = 0.1
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="timeout" from="Area2D/Timer" to="Area2D" method="_on_timer_timeout"]

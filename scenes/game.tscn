@@ -12,10 +12,6 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = 3.0
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lnu2h"]
-normal = Vector2(1, 0)
-distance = 1.0
-
 [sub_resource type="Animation" id="Animation_iywne"]
 resource_name = "1_animation"
 
@@ -89,15 +85,8 @@ position_smoothing_speed = 30.0
 position = Vector2(132, 154)
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=2105975698]
-position = Vector2(136, 75)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1890780783]
-position = Vector2(-563, -176)
-shape = SubResource("WorldBoundaryShape2D_lnu2h")
-
 [node name="kill_zone" parent="." unique_id=1455925117 instance=ExtResource("7_u5sy4")]
-position = Vector2(134, 101)
+position = Vector2(129, 105)
 
 [node name="Node" type="Node" parent="." unique_id=370784922]
 
@@ -272,3 +261,15 @@ position = Vector2(-11, -30)
 
 [node name="dcheskei_tip1" parent="." unique_id=1284503148 instance=ExtResource("8_gee14")]
 position = Vector2(334.00003, -71)
+
+[node name="AnimatableBody2D" parent="." unique_id=173376230 instance=ExtResource("6_p57ef")]
+position = Vector2(37, 80)
+
+[node name="AnimatableBody2D2" parent="." unique_id=1664374519 instance=ExtResource("6_p57ef")]
+position = Vector2(-31, 57)
+
+[node name="AnimatableBody2D3" parent="." unique_id=1676335620 instance=ExtResource("6_p57ef")]
+position = Vector2(69, 80)
+
+[node name="AnimatableBody2D4" parent="." unique_id=157426972 instance=ExtResource("6_p57ef")]
+position = Vector2(1, 57)
