@@ -51,3 +51,13 @@ frame_progress = 0.9264224
 
 [node name="kill_mobe" parent="." unique_id=1455925117 instance=ExtResource("2_ox8bd")]
 position = Vector2(0, 5)
+
+[node name="Rayright" type="RayCast2D" parent="." unique_id=1197446623]
+position = Vector2(0, 4.9098616)
+rotation = -1.5707964
+target_position = Vector2(0, 7.1695766)
+
+[node name="Rayleft" type="RayCast2D" parent="." unique_id=557631967]
+position = Vector2(0, 4.9098616)
+rotation = 1.5707964
+target_position = Vector2(0, 7.1695766)
