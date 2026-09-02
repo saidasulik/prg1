@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dikb0gb8kfxfl" path="res://scenes/dcheskei_tip_1.tscn" id="8_gee14"]
 [ext_resource type="Texture2D" uid="uid://b3l28g2o2rf6l" path="res://assets/sprites/world_tileset.png" id="9_0tnpc"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
+distance = 3.0
+
 [sub_resource type="Animation" id="Animation_u5sy4"]
 length = 0.001
 tracks/0/type = "value"
@@ -230,6 +233,12 @@ limit_bottom = 51
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 30.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=627750269]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1573210921]
+position = Vector2(132, 154)
+shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
 [node name="kill_zone" parent="." unique_id=1455925117 instance=ExtResource("7_u5sy4")]
 position = Vector2(129, 105)
