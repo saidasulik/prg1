@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bxnbqj50hfeir"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_nx1wd"]
-a = Vector2(0, -9)
+a = Vector2(0, -141)
+b = Vector2(0, 174)
 
 [node name="limit" type="Node2D" unique_id=1120040895]
 

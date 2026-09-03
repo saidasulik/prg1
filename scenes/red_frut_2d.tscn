@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://betmc28qkhle5"]
+
+[ext_resource type="Script" uid="uid://ctfx1yb0blt60" path="res://scripts/red_frut_2d.gd" id="1_xe5ci"]
+[ext_resource type="Texture2D" uid="uid://onnr0aynkaku" path="res://assets/sprites/fruit.png" id="2_w0rja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1552"]
+size = Vector2(16, 15.75)
+
+[node name="Node2D" type="Node2D" unique_id=1795060785]
+
+[node name="red_frut2D" type="Area2D" parent="." unique_id=858408485]
+collision_mask = 2
+script = ExtResource("1_xe5ci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="red_frut2D" unique_id=1470842019]
+shape = SubResource("RectangleShape2D_f1552")
+
+[node name="Sprite2D" type="Sprite2D" parent="red_frut2D" unique_id=30056454]
+texture = ExtResource("2_w0rja")
+hframes = 4
+vframes = 4
+frame = 14
+
+[connection signal="body_entered" from="red_frut2D" to="red_frut2D" method="_on_body_entered"]
